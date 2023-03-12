@@ -1,0 +1,32 @@
+.navbar{
+    width: 100%;
+    display: flex;
+    height: 70px;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    background-color: black;
+    
+}
+
+.ul-navbar{
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+.ul-li{
+   background-color: #111010;
+   border-radius: 5px;
+   padding: 6px;
+   box-shadow: 3px 3px 2px rgb(156, 255, 149);
+   text-shadow: 1px 1px 1px rgb(237, 230, 230);
+   text-decoration: solid rgb(204, 205, 228);
+}
+.ul-li:hover{
+    transform: scale(0.9);
+    color: white;
+}
+.ul-li-a{
+    text-decoration: none;
+    color: white;
+}
