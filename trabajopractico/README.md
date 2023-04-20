@@ -1,3 +1,10 @@
+# E-commerce React App
+Proyecto de tienda online de plantas. Desarrollado para curso de CoderHouse React JS.
+
+# Componentes
+Presenta NavBar con nombre de marca, dos categorías para filtrar productos y carrito. El listado completo de items se muestra en el Inicio/ItemListContainer. Se puede acceder a cada item para ver el detalle, seleccionar cantidad y agregar al carrito. En carrito, se muestra el precio total, puede eliminarse uno por uno o vaciarlo completamente. Cuenta con un formulario para completar datos del comprador y se confirma la compra enviando la información al Firestore.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

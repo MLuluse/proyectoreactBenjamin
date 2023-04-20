@@ -1,32 +1,8 @@
 import { useState, useEffect } from 'react';
 import ItemList from '../ItemList/ItemList';
-import productsDatabase from '../../data/products';
 import { useParams } from 'react-router-dom';
-
-
-/*-----------mock async <Service----------></Service---------->*/
-
-function getItems(){
-  const promesa = new Promise((resolve)=>{
-    setTimeout(()=>{
-      resolve(productsDatabase);
-    },1000);
-  });
-
-
-  return promesa;
-}
-
-function getItemsByCategory(categoryURL){
-  const promesa = new Promise((resolve)=>{
-    setTimeout(()=>{
-      //filtro de Array
-     const filtrocategoria = productsDatabase.filter(item=> item.category===categoryURL);
-     resolve(filtrocategoria);
-    },1000);
-  });
-  return promesa;
-}
+import Loader from '../Loader/Loader';
+import { getItems, getItemsByCategory} from '../services/firestore';
 
 
 function ItemListContainer(){
@@ -39,9 +15,8 @@ function ItemListContainer(){
 
    useEffect(()=>{
     if ( categoryid === undefined){
+      //! siempre los llamados a firebase dentro de un useEffect
              getItems().then((respuesta) => {
-  
-             console.log("promesa cumplida", respuesta);
   
              setProducts(respuesta) ;
              });}
@@ -52,8 +27,15 @@ function ItemListContainer(){
              }
             },
             [categoryid] );
+
+
+
+
+   if(products.length === 0){
+    
+   return <Loader/>}
   
-  
+   
   
   
       return(

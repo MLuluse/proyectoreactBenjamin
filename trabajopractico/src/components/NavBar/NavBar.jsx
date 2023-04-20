@@ -31,7 +31,7 @@ function NavBar(props){
                 </li>
                 
             </ul>
-            <Link to="Cart">
+            <Link to="/Cart">
             <CartWidget img ="/imgs/carrito-neon.jpg"/>
             </Link>
 

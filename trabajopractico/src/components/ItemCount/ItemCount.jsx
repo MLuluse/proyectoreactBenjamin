@@ -21,12 +21,14 @@ export default function ItemCount(props) {
             alert("no se puede tener menos de 1 producto");
         }
     }
+  
 
     return (
-    <div  stock={props.stock} >
-        <button  onClick={handleSubstract}> - </button>
+    <div  >
+        <button onClick={handleSubstract}> - </button>
         <span> {count} </span>
         <button onClick={handleAdd}> + </button> 
+        <button onClick={()=>props.onAddToCart(count)} > Comprar </button>
     </div> )
 }
 
